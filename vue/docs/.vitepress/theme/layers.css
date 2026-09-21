@@ -1,0 +1,2 @@
+/* 必须最先加载：确定层顺序，VitePress 样式(vp) 高于 Tailwind preflight(base)、低于 utilities */
+@layer theme, base, vp, components, utilities;

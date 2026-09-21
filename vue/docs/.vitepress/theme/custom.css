@@ -1,0 +1,7 @@
+/* 文档站本身也使用同一套主题 token */
+:root {
+  --vp-c-brand-1: var(--primary);
+  --vp-c-brand-2: var(--primary);
+  --vp-c-brand-3: var(--primary);
+  --vp-c-brand-soft: color-mix(in oklch, var(--primary) 14%, transparent);
+}
