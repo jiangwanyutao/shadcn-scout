@@ -95,7 +95,22 @@ Vue（`@/components/layout/AdminLayout.vue`）：
 常用：`conversation`（消息列表）、`message`（单条消息）、`prompt-input`（输入框）、`reasoning`、`tool`、`code-block`、`sources`。
 组件会装到 `components/ai-elements/` 下，它们同样读取主题变量，不需要额外处理配色。
 
-## 6. 已知问题
+## 6. 其他扩展组件（仅 React，Vue 项目不要用）
+
+| 需求 | 组件 | 安装与必须处理的问题 |
+|---|---|---|
+| 链接悬停预览 | `@animate-ui/components-radix-preview-link-card` | 预览图由外部服务 api.microlink.io 生成，会把链接发给第三方，内网/敏感链接不要用；`PreviewLinkCardContent` 里必须放 `PreviewLinkCardImage`；删除文件首行未使用的 `import * as React` |
+| AI 执行过程（步骤/工具调用/搜索） | `@agentui/agent-activity` | 安装后把 `components/motion/text-shimmer.tsx` 里的 `from "@/components/motion/text-shimmer"` 改为 `from "@/lib/text-shimmer"` |
+| AI 输入框（模型选择、设置菜单） | `@iconiq/ai-input` | 不能直接 add（上游依赖名写错），用下面的命令安装 |
+
+```bash
+curl -s https://iconiqui.com/r/ai-input.json | sed 's/"b-switch"/"@iconiq\/b-switch"/' > ai-input.json
+npx shadcn@latest add ./ai-input.json
+```
+
+CLI 偶尔没有输出 `Created ...` 也没生成文件，重跑一次即可。
+
+## 7. 已知问题
 
 - Vue CLI 报 `Failed to fetch from registry` 时，去掉 `HTTPS_PROXY` / `HTTP_PROXY` 环境变量再执行。
 - React 的 Tooltip 必须包在 `TooltipProvider` 内（AdminLayout 已经包了）。

@@ -47,7 +47,13 @@ export default defineConfig({
         text: group,
         items: COMPONENTS.filter(c => c.group === group).map(c => ({ text: c.title, link: `/components/${c.name}` })),
       })),
-      { text: '扩展组件', items: [{ text: 'AI Elements', link: '/extensions/ai-elements' }] },
+      {
+        text: '扩展组件',
+        items: [
+          { text: 'AI Elements', link: '/extensions/ai-elements' },
+          { text: '其他扩展（仅 React）', link: '/extensions/react-only' },
+        ],
+      },
     ],
     outline: { label: '本页目录' },
     docFooter: { prev: '上一篇', next: '下一篇' },

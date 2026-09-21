@@ -36,10 +36,11 @@ const COLORS = [
 
 ## 和 shadcn 默认主题的区别
 
+除下面两点外，颜色、圆角（`0.625rem`）、图表色全部是 shadcn 官方 nova 风格 + neutral 底色的原值。
+
 | 项目 | 说明 |
 |---|---|
-| 主色 | 蓝色 `oklch(0.546 0.245 262.881)`，暗色下稍亮 |
-| 状态色 | 新增 `success`、`warning`、`info` 三组，每组都有 `-foreground` 文字色 |
+| 状态色 | 新增 `success`、`warning`、`info` 三组，每组都有 `-foreground` 文字色。饱和度较低，与官方中性色风格一致，文字对比度均不低于 4.5（WCAG AA） |
 | 圆角刻度 | 固定为乘法公式；React 和 Vue 的 CLI 默认公式不同，不固定的话会差 1px 左右 |
 
 ## 修改主题
