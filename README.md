@@ -1,46 +1,54 @@
-# ui-component
+# shadcn scout
 
-基于 shadcn 的 React / Vue 统一组件规范：一套主题、一套后台布局、一个类似 element-ui 的文档站，外加一份给 AI 用的 Skill。
+一个给编程 Agent（Claude Code、Codex、Cursor 等）用的 Skill：在 React / Vue 项目里写布局和动效时，先用 shadcn CLI 到 shadcn 生态的第三方 registry 里搜现成实现，装好后统一成项目的主题，而不是从头手写。
 
-文档站：https://jiangwanyutao.github.io/ui-component/ （push 到 main 后由 GitHub Actions 自动部署）
+- React（shadcn/ui）和 Vue（shadcn-vue）都支持
+- 布局：后台骨架、侧边栏、登录注册、营销区块、图表，页面类型判断、响应式和压力测试
+- 动效：带动画的组件、过渡原语、文字特效、背景、动画图标，运行时选择、时长参考和 reduced motion
+- 智能体组件：录音 / 语音输入、思考中、推理过程、工具调用、流式回复、审批，React 和 Vue 各有对应；表里没有的教 AI 到官方目录里按关键词找
+- 收录 animate-ui、shadcn-studio、inspira-ui、nxui、GodUI、moumenlab、AI Elements 等 30 多个站点，每个站点都写明了搜索和安装方式
+- 只有 Markdown，没有脚本
 
-Registry：`https://jiangwanyutao.github.io/ui-component/r`
-
-```
-vue/                      Vue 项目，同时也是文档站（VitePress）
-  docs/                   文档站页面
-    .vitepress/components.ts   组件清单（侧边栏和组件页都从这里生成）
-    public/r/             registry，随文档站一起发布
-      theme.json          统一主题（React / Vue 共用）
-      react/ vue/         admin-layout（后台布局）
-  src/demos/              Vue 示例（文档站实时预览）
-  src/layout/             Vue 后台布局源码
-react/                    React 项目
-  src/demos/              React 示例（文档站展示代码；dev 下打开 /demos.html 预览全部）
-  src/layout/             React 后台布局源码
-skills/ui-kit/SKILL.md    给 AI 的规范，文档站“AI Skill”页可一键复制
-```
-
-## 常用命令
+## 安装
 
 ```bash
-cd vue && pnpm docs:dev          # 本地文档站
-cd vue && pnpm docs:build        # 构建文档站，产物在 vue/docs/.vitepress/dist（含 /r registry）
-cd react && pnpm registry:build  # 改了 React 布局后，重新生成 react/admin-layout.json
-cd vue && pnpm registry:build    # 改了 Vue 布局后，重新生成 vue/admin-layout.json
+npx skills add jiangwanyutao/ui-component --skill shadcn-scout
 ```
 
-Vue 的 shadcn-vue CLI 在设置了 `HTTPS_PROXY` 时会请求失败，执行前先去掉代理变量。
+加 `--agent claude-code`（或 `codex`、`cursor`）可以指定 Agent，加 `--global` 可以对所有项目生效。也可以手动把 `skills/shadcn-scout` 整个目录复制到 Agent 的 skills 目录里。
 
-## 新增一个组件
+推荐同时安装官方 shadcn skill：它负责组件的正确写法和 CLI 用法，本 skill 负责去哪找组件，以及布局和动效。本 skill 运行时如果发现项目没装官方 skill，会提示你安装。
 
-1. 在 `react/` 和 `vue/` 里分别用 CLI 添加组件。
-2. 写两份示例：`vue/src/demos/XxxDemo.vue`、`react/src/demos/xxx-demo.tsx`。
-3. 在 `vue/docs/.vitepress/components.ts` 加一行。
-4. 同步更新 `skills/ui-kit/SKILL.md` 里的对照表。
+```bash
+npx skills add shadcn/ui --skill shadcn               # React
+npx skills add unovue/shadcn-vue --skill shadcn-vue   # Vue
+```
 
-## 验证情况
+## 用法
 
-- React / Vue 的后台布局页面在 1280×800 下逐元素比对（颜色、圆角、字号、位置尺寸），90 个元素完全一致。
-- 在全新的 React、Vue 项目中按 SKILL 的命令安装主题和布局，都能正常构建。
-- 文档站 32 个页面在生产构建下无报错；对话框、选择器、日期选择、消息提示、AI 对话都实际点击测试过。
+```text
+用 shadcn-scout 给这个 Vue 项目搭一个后台首页：左侧可折叠菜单，顶部面包屑，内容区放统计卡片和图表。
+```
+
+```text
+用 shadcn-scout 给这个 React 项目的智能体对话加一个录音按钮和“思考中”折叠块。
+```
+
+```text
+用 shadcn-scout 给设置页的 tabs 加切换动画，项目已经在用 motion，不要引入新的动效库。
+```
+
+## 目录
+
+```text
+skills/shadcn-scout/
+├── SKILL.md                 # 入口：看项目 → 去哪找 → 搜索/预览/安装 → 统一主题 → 跨框架 → 验收
+└── references/
+    ├── sources.md           # 站点清单：框架、搜索方式、擅长、注意事项、已知问题
+    ├── layout.md            # 布局
+    └── motion.md            # 动效
+```
+
+## 致谢
+
+站点清单和部分设计原则参考了 [UI Sift](https://github.com/Ciao1019/ui-sift)（MIT）。收录的各站点组件保留各自的许可证。
