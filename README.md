@@ -53,6 +53,18 @@ shadcn-scout 是一个给编程 Agent（Claude Code、Codex、Cursor 等）用�
 
 ### 安装
 
+**让 Agent 帮你装（推荐）**，在项目目录里打开 Claude Code、Codex、Cursor 等，发这一段：
+
+```text
+帮我在当前项目安装 shadcn-scout（https://github.com/jiangwanyutao/shadcn-scout），它教你写 React / Vue 界面时先去 shadcn 生态找现成组件。按顺序做：
+1. 运行 npx skills add jiangwanyutao/shadcn-scout --agent <你自己> --yes，<你自己> 填你对应的名字（claude-code、codex、cursor 等）。
+2. 看项目根目录的 components.json：$schema 含 shadcn-vue.com 就是 Vue，否则是 React。没有 components.json 的话，告诉我项目还没初始化 shadcn，先不要自己 init。
+3. 运行 npx skills ls --json，如果还没有官方 shadcn skill，就装上：React 运行 npx skills add shadcn/ui --skill shadcn --agent <你自己> --yes，Vue 运行 npx skills add unovue/shadcn-vue --skill shadcn-vue --agent <你自己> --yes。
+4. 告诉我装了哪些 skill、装在哪里，以及是否需要重启你才能加载它们。
+```
+
+**手动装：**
+
 ```bash
 npx skills add jiangwanyutao/shadcn-scout
 ```

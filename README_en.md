@@ -55,6 +55,18 @@ The skill guidance is written in Simplified Chinese; agents that read Chinese ca
 
 ### Installation
 
+**Let your agent install it (recommended).** Open Claude Code, Codex, Cursor, etc. in your project directory and send this:
+
+```text
+Install shadcn-scout (https://github.com/jiangwanyutao/shadcn-scout) in the current project. It teaches you to look for ready-made components in the shadcn ecosystem when writing React / Vue UI. Do these steps in order:
+1. Run npx skills add jiangwanyutao/shadcn-scout --agent <you> --yes, where <you> is your own agent name (claude-code, codex, cursor, etc.).
+2. Check components.json in the project root: if $schema contains shadcn-vue.com it is Vue, otherwise React. If there is no components.json, tell me the project hasn't initialized shadcn yet and don't run init yourself.
+3. Run npx skills ls --json. If the official shadcn skill isn't installed, install it: for React run npx skills add shadcn/ui --skill shadcn --agent <you> --yes; for Vue run npx skills add unovue/shadcn-vue --skill shadcn-vue --agent <you> --yes.
+4. Tell me which skills were installed, where, and whether you need a restart to load them.
+```
+
+**Manual install:**
+
 ```bash
 npx skills add jiangwanyutao/shadcn-scout
 ```
