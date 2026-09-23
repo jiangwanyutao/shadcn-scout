@@ -5,11 +5,11 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/jiangwanyutao/ui-component"><img src="https://img.shields.io/badge/Project%20Page-GitHub-blue" alt="Project Page"></a>
+  <a href="https://github.com/jiangwanyutao/shadcn-scout"><img src="https://img.shields.io/badge/Project%20Page-GitHub-blue" alt="Project Page"></a>
   <a href="https://skills.sh"><img src="https://img.shields.io/badge/Agent-Skill-D97757" alt="Agent Skill"></a>
   <a href="https://ui.shadcn.com"><img src="https://img.shields.io/badge/shadcn-React%20%7C%20Vue-18181b" alt="shadcn React | Vue"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a>
-  <a href="https://github.com/jiangwanyutao/ui-component/stargazers"><img src="https://img.shields.io/github/stars/jiangwanyutao/ui-component?style=flat" alt="Stars"></a>
+  <a href="https://github.com/jiangwanyutao/shadcn-scout/stargazers"><img src="https://img.shields.io/github/stars/jiangwanyutao/shadcn-scout?style=flat" alt="Stars"></a>
 </p>
 
 shadcn-scout is a **Skill** for coding agents (Claude Code, Codex, Cursor, and more). When writing layouts, motion, or agent components in a React / Vue project, it makes the AI **search the shadcn ecosystem's third-party registries with the shadcn CLI first**, preview the source, install it, and then **align it with the project's own theme**. Hand-writing is the last resort.
@@ -56,7 +56,7 @@ The skill guidance is written in Simplified Chinese; agents that read Chinese ca
 ### Installation
 
 ```bash
-npx skills add jiangwanyutao/ui-component --skill shadcn-scout
+npx skills add jiangwanyutao/shadcn-scout
 ```
 
 Add `--agent claude-code` (or `codex`, `cursor`) to target an agent, and `--global` to install for all projects. You can also copy the whole `skills/shadcn-scout` directory into your agent's skills directory.
@@ -220,4 +220,4 @@ Released under the [MIT](LICENSE) License. The site list and some design guidanc
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=jiangwanyutao/ui-component&type=Date)](https://star-history.com/#jiangwanyutao/ui-component&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=jiangwanyutao/shadcn-scout&type=Date)](https://star-history.com/#jiangwanyutao/shadcn-scout&Date)

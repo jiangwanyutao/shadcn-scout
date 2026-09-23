@@ -5,11 +5,11 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/jiangwanyutao/ui-component"><img src="https://img.shields.io/badge/Project%20Page-GitHub-blue" alt="Project Page"></a>
+  <a href="https://github.com/jiangwanyutao/shadcn-scout"><img src="https://img.shields.io/badge/Project%20Page-GitHub-blue" alt="Project Page"></a>
   <a href="https://skills.sh"><img src="https://img.shields.io/badge/Agent-Skill-D97757" alt="Agent Skill"></a>
   <a href="https://ui.shadcn.com"><img src="https://img.shields.io/badge/shadcn-React%20%7C%20Vue-18181b" alt="shadcn React | Vue"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green" alt="License"></a>
-  <a href="https://github.com/jiangwanyutao/ui-component/stargazers"><img src="https://img.shields.io/github/stars/jiangwanyutao/ui-component?style=flat" alt="Stars"></a>
+  <a href="https://github.com/jiangwanyutao/shadcn-scout/stargazers"><img src="https://img.shields.io/github/stars/jiangwanyutao/shadcn-scout?style=flat" alt="Stars"></a>
 </p>
 
 shadcn-scout 是一个给编程 Agent（Claude Code、Codex、Cursor 等）用的 **Skill**：在 React / Vue 项目里写布局、动效、智能体组件时，它让 AI **先用 shadcn CLI 到 shadcn 生态的第三方 registry 里搜现成实现**，预览源码后再安装，最后**统一成项目自己的主题**，找不到才手写。
@@ -54,7 +54,7 @@ shadcn-scout 是一个给编程 Agent（Claude Code、Codex、Cursor 等）用�
 ### 安装
 
 ```bash
-npx skills add jiangwanyutao/ui-component --skill shadcn-scout
+npx skills add jiangwanyutao/shadcn-scout
 ```
 
 加 `--agent claude-code`（或 `codex`、`cursor`）可以指定 Agent，加 `--global` 可以对所有项目生效。也可以手动把 `skills/shadcn-scout` 整个目录复制到 Agent 的 skills 目录里。
@@ -218,4 +218,4 @@ skills/shadcn-scout/
 
 ## ⭐ Star 历史
 
-[![Star History Chart](https://api.star-history.com/svg?repos=jiangwanyutao/ui-component&type=Date)](https://star-history.com/#jiangwanyutao/ui-component&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=jiangwanyutao/shadcn-scout&type=Date)](https://star-history.com/#jiangwanyutao/shadcn-scout&Date)
